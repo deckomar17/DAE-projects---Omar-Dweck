@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="card-container">
+        <div class="card">
+            <img src="https://i.insider.com/6340783eb3e94d0019781b4e?width=700" alt="Profile 1">
+            <div class="description">
+                <h3>Mr. Pinkie</h3>
+                <p>Software Engineer</p>
+                <p>I love coding and hiking. Looking for someone who shares similar interests.</p>
+            </div>
+        </div>
+    </div>
+    <div id="buttons">
+        <button id="dislike" onclick="dislike()">Dislike</button>
+        <button id="like" onclick="like()">Like</button>
+    </div>
+
+    <script>
+        const cardContainer = document.getElementById('card-container');
+        const cards = document.querySelectorAll('.card');
+        let currentCardIndex = 0;
+
+        function like() {
+            swipeCard('right');
+        }
+
+        function dislike() {
+            swipeCard('left');
+        }
+
+        function swipeCard(direction) {
+            cards[currentCardIndex].style.transform = `translate${direction === 'right' ? 'X' : 'Y'}(-100%) rotate(${direction === 'right' ? 15 : -15}deg)`;
+
+            currentCardIndex++;
+
+            if (currentCardIndex < cards.length) {
+                cards[currentCardIndex].style.transform = 'translate(0) rotate(0)';
+            } else {
+                // Add logic for when there are no more cards
+                console.log('No more cards');
+            }
+        }
+      
+    </script>
+</body>
+</html>
