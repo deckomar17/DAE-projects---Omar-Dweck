@@ -1,81 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <main>
- <body>
-    <header>
-        <div class="nav">
-          <nav>
-            <a href="gaming.html">Gaming</a> |
-            <a href="music.html/">Music </a> |
-            <a href="shoes.html/">Shoes</a> |
-            <a href="bestsellers.html/"> Sugested </a> |
-            <a href="Newest.html">Newest </a> |
-            <a href="anime.html">Anime </a> |
-          </nav>
-        </div>
-    </header>
-<head>
-</main>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lancelot&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    
+        <link rel="stylesheet" type="text/css" href="">
+        <!-- CSS only (Bootstrap 5) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <main>
+            <header>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">Navbar</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                          </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                      </div>
+                    </div>
+                  </nav>
+            
+                    <!--<nav>
+                        <a href="gaming.html">Gaming</a> |
+                        <a href="music.html/">Music </a> |
+                        <a href="shoes.html/">Shoes</a> |
+                        <a href="bestsellers.html/"> Sugested </a> |
+                        <a href="Newest.html">Newest </a> |
+                        <a href="anime.html">Anime </a> |
+                    </nav> -->
 
-    <div id="card-container">
-        <div class="card">
-            <img src="https://i.insider.com/6340783eb3e94d0019781b4e?width=700" alt="Profile 1">
-            <div class="description">
-                <h3>Mr. Pinkie</h3>
-                <p>Software Engineer</p>
-                <p>I love coding and hiking. Looking for someone who shares similar interests.</p>
+                </div>
+
+            </header>
+            <div class="hero-image">
+                <div class="hero-text">
+                  <h1>Welcome to 5$star</h1>
+                  <p>Only the best</p>
+                </div>
+              </div>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            <div id="card-container">
+                <div class="card">
+                    <img src="https://i.insider.com/6340783eb3e94d0019781b4e?width=700" alt="Profile 1">
+                    <div class="description">
+                        <h3>Mr. Pinkie</h3>
+                        <p>Software Engineer</p>
+                        <p>I love coding and hiking. Looking for someone who shares similar interests.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div id="buttons">
-        <button id="dislike" onclick="dislike()">Dislike</button>
-        <button id="like" onclick="like()">Like</button>
-    
-    </div>
-    
-    <script>
-        const cardContainer = document.getElementById('card-container');
-        const cards = document.querySelectorAll('.card');
-        let currentCardIndex = 0;
+            <div id="buttons">
+                <button id="dislike" onclick="dislike()">Dislike</button>
+                <button id="like" onclick="like()">Like</button>
+            </div>
+        </main>
+        
 
-        function like() {
-            swipeCard('right');
-        }
-
-        function dislike() {
-            swipeCard('left');
-        }
-
-        function swipeCard(direction) {
-            cards[currentCardIndex].style.transform = `translate${direction === 'right' ? 'X' : 'Y'}(-100%) rotate(${direction === 'right' ? 15 : -15}deg)`;
-
-            currentCardIndex++;
-
-            if (currentCardIndex < cards.length) {
-                cards[currentCardIndex].style.transform = 'translate(0) rotate(0)';
-            } else {
-                // Add logic for when there are no more cards
-                console.log('No more cards');
-            }
-        }
-      
-    </script>
-  <footer>
-  <p>
-    By Omar Dweck
-    <a class="dae-link" href="https://www.transformnhv.org/">
-    <div class="MadeAtDae">
-      <p>Made in collaboration with DAE</p>
-      <img src="dae.jpg" width="100px"/>
-    </div>
-    </a>
-  </p>
-
-  </footer>
-</body>
+        
+        <footer>
+            <p>
+                By Omar Dweck
+                <a class="dae-link" href="https://www.transformnhv.org/">
+                    <div class="MadeAtDae">
+                        <p>Made in collaboration with DAE</p>
+                        <img src="download.jpeg" width="100px"/>
+                    </div>
+                </a>
+            </p>
+        </footer>
+        <script src="script.js" ></script>
+    </body>
 </html>
