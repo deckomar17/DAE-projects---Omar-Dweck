@@ -1,0 +1,39 @@
+.site-footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .footer-nav ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .social-links, .footer-nav ul li {
+      display: block;
+      margin: 10px auto;
+    }
+  }
