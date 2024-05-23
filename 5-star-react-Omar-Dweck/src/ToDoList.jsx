@@ -6,7 +6,7 @@ function ToDoList() {
   <h1>5$TAR ToDo</h1>
   <form>
     <h2 className="label-wrapper">
-      <label htmlFor="new-todo-input" className="label__lg">
+      <label htmlFor="new-todo-input" cla2ssName="label__lg">
         What needs to be done?
       </label>
     </h2>
