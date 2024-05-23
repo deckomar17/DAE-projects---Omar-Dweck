@@ -1,5 +1,4 @@
 <?php
-// Include the necessary libraries
 require_once 'vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
@@ -9,7 +8,6 @@ use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
 
-// Define the routes
 $routes = new RouteCollection();
 $routes->add('add_task', new Route('/add', array(
     '_controller' => 'addTask',
