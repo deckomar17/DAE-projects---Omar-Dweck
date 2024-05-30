@@ -50,6 +50,7 @@ function addTask(Request $request)
 {
 
 
+
     $response = new Response('Task added', 302);
     $response->headers->set('Location', '/');
     $response->send();
@@ -72,6 +73,8 @@ function listTasks()
 
 function deleteTask($id)
 {
+
+$id = (int) $id;
 
     $response = new Response('Task deleted', 302);
     $response->headers->set('Location', '/');
